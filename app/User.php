@@ -89,8 +89,8 @@ class User extends Authenticatable
             $image = url('/') . '/storage/' . $this->background_path;
         }
 
-        if ($this->background_path) {
-            $image = $this->background_path;
+        if ($this->background_url) {
+            $image = $this->background_url;
         }
 
         return $image;
