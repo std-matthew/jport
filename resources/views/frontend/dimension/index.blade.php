@@ -12,7 +12,7 @@
 	<!-- Intro -->
 	<article id="intro">
 		<h2 class="major">{{ $intro->header }}</h2>
-		<span class="image main"><img src="{{ $intro->renderImage() }}" alt="" /></span>
+		<span class="image main"><img src="/images/jenny/intro.jpg" alt="" /></span>
 		<div>
 			{!! $intro->content !!}
 		</div>
@@ -21,7 +21,7 @@
 	<!-- Work -->
 	<article id="work">
 		<h2 class="major">{{ $work->header }}</h2>
-		<span class="image main"><img src="{{ $work->renderImage() }}" alt="" /></span>
+		<span class="image main"><img src="/images/jenny/work.jpg" alt="" /></span>
 		<div>
 			{!! $work->content !!}
 		</div>
@@ -30,7 +30,7 @@
 	<!-- About -->
 	<article id="about">
 		<h2 class="major">{{ $about->header }}</h2>
-		<span class="image main"><img src="{{ $about->renderImage() }}" alt="" /></span>
+		<span class="image main"><img src="/images/jenny/about.jpg" alt="" /></span>
 		<div>
 			{!! $about->content !!}
 		</div>
