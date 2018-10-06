@@ -8,7 +8,14 @@
 			
 			@include('backend.partials.alerts')
 			<div class="row">
-				<div class="input-field col s6">
+				<div class="input-field col s12">
+					<input value="{{ $settings->icon }}" name="icon" id="icon" type="text" class="validate">
+					<label for="icon">Icon</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col m6 s12">
 					<select name="color">
 						<option value="" selected>Default</option>
 						@foreach ($colors as $color)
@@ -17,7 +24,7 @@
 					</select>
 					<label>Color</label>
 				</div>
-				<div class="input-field col s6">
+				<div class="input-field col m6 s12">
 					<select name="color_depth">
 						<option value="" selected>Default</option>
 						@foreach ($depths as $depth)
@@ -27,6 +34,7 @@
 					<label>Color Depth</label>
 				</div>
 			</div>
+			
 			<div class="row">
 				<div class="input-field col s12">
 					<input value="{{ $settings->og_title }}" name="og_title" id="og_title" type="text" class="validate">
@@ -37,6 +45,7 @@
 					<label for="og_description">OG Description</label>
 				</div>
 			</div>
+
 			<div class="row">
 				<div class="input-field col s12">
 					<input value="{{ $settings->og_image_url }}" name="og_image_url" id="og_image_url" type="text" class="validate">
@@ -57,6 +66,7 @@
 					<input class="file-path validate" type="text" placeholder="OG Image">
 				</div>
 			</div>
+			
 			<div class="row">
 				<div class="input-field col s12">
 					<input value="{{ $settings->favicon_url }}" name="favicon_url" id="favicon_url" type="text" class="validate">
