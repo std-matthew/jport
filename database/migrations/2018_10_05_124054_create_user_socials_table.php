@@ -18,7 +18,7 @@ class CreateUserSocialsTable extends Migration
 
             $table->integer('user_id')->unsigned()->index();
 
-            $table->string('url')->nullable();
+            $table->text('url')->nullable();
             $table->integer('type')->unsigned();
             
             $table->softDeletes();
