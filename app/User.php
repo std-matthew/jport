@@ -91,4 +91,8 @@ class User extends Authenticatable
     public function renderUserDirectory() {
         return 'users/' . $this->username;
     }
+
+    public function viewNotifications() {
+        return url('/');
+    }
 }

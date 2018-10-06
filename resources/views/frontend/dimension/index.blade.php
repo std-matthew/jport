@@ -39,7 +39,9 @@
 	<!-- Contact -->
 	<article id="contact">
 		<h2 class="major">{{ $contact->header }}</h2>
-		<form method="post" action="#">
+		<form action="{{ route('user.notify', $user->id) }}" method="POST">
+			@include('frontend.dimension.partials.alerts')
+			@csrf
 			<div class="fields">
 				<div class="field half">
 					<label for="name">Name</label>

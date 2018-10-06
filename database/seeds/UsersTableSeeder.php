@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
         		'first_name' => 'Jenny',
         		'last_name' => 'Sia',
         		'username' => 'mattiyahu19',
-                'email' => 'matthew@praxxys.ph',
+                'email' => 'mattiyahu11@gmail.com',
         	]
         ];
 

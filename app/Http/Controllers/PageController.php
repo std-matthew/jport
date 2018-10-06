@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\NotifyPost;
+use App\Notifications\ContactNotification;
+
+use App\Helpers;
 
 use App\User;
 
@@ -26,5 +30,16 @@ class PageController extends Controller
         $data = array_merge($data, ['user' => $user]);
 
     	return view('frontend.dimension.index', $data);
+    }
+
+    public function notify(NotifyPost $request, User $user)
+    {
+        if (!$user) { $user = User::first(); }
+
+        $user->notify(new ContactNotification($request));
+
+        Helpers::flash('You have successfully sent your message.');
+
+        return redirect()->back();
     }
 }
