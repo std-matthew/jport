@@ -75,6 +75,10 @@ class User extends Authenticatable
             $image = url('/') . '/storage/' . $this->avatar_path;
         }
 
+        if ($this->avatar_url) {
+            $image = $this->avatar_url;
+        }
+
         return $image;
     }
 
@@ -83,6 +87,10 @@ class User extends Authenticatable
         
         if ($this->background_path) {
             $image = url('/') . '/storage/' . $this->background_path;
+        }
+
+        if ($this->background_path) {
+            $image = $this->background_path;
         }
 
         return $image;

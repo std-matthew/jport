@@ -23,7 +23,7 @@
 		</div>
 
 		<!-- BG -->
-		<div id="bg" style="background-image: url('/images/jenny/main.jpg');"></div>
+		<div id="bg" style="background-image: url('{{ $main->renderImage() }}');"></div>
 
 		<!-- Scripts -->
 		<script src="/dimension/js/jquery.min.js"></script>

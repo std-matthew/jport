@@ -7,7 +7,26 @@
 			@csrf
 			
 			@include('backend.partials.alerts')
-
+			<div class="row">
+				<div class="input-field col s6">
+					<select name="color">
+						<option value="" selected>Default</option>
+						@foreach ($colors as $color)
+							<option {{ $color === $settings->color ? 'selected' : '' }} value="{{ $color }}">{{ ucwords($color) }}</option>
+						@endforeach
+					</select>
+					<label>Color</label>
+				</div>
+				<div class="input-field col s6">
+					<select name="color_depth">
+						<option value="" selected>Default</option>
+						@foreach ($depths as $depth)
+							<option {{ $depth === $settings->color_depth ? 'selected' : '' }} value="{{ $depth }}">{{ ucwords($depth) }}</option>
+						@endforeach
+					</select>
+					<label>Color Depth</label>
+				</div>
+			</div>
 			<div class="row">
 				<div class="input-field col s12">
 					<input value="{{ $settings->og_title }}" name="og_title" id="og_title" type="text" class="validate">
@@ -17,6 +36,12 @@
 					<input value="{{ $settings->og_description }}" name="og_description" id="og_description" type="text" class="validate">
 					<label for="og_description">OG Description</label>
 				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input value="{{ $settings->og_image_url }}" name="og_image_url" id="og_image_url" type="text" class="validate">
+					<label for="og_image_url">OG Image URL</label>
+				</div>	
 			</div>
 			@if ($settings->og_image)
 				<div class="row">
@@ -31,6 +56,12 @@
 				<div class="file-path-wrapper">
 					<input class="file-path validate" type="text" placeholder="OG Image">
 				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input value="{{ $settings->favicon_url }}" name="favicon_url" id="favicon_url" type="text" class="validate">
+					<label for="favicon_url">OG Image URL</label>
+				</div>	
 			</div>
 			@if ($settings->favicon)
 				<div class="row">

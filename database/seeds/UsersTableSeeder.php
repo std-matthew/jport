@@ -20,6 +20,8 @@ class UsersTableSeeder extends Seeder
         		'last_name' => 'Sia',
         		'username' => 'mattiyahu19',
                 'email' => 'mattiyahu11@gmail.com',
+                'avatar_url' => '/images/avatar.png',
+                'background_url' => '/images/background.jpg',
         	]
         ];
 
@@ -57,6 +59,7 @@ class UsersTableSeeder extends Seeder
         return [
             'header' => 'Jenny Sia',
             'content' => '<p>Amazing. Beautiful. Simplicity.</p>',
+            'image_url' => '/images/jenny/main.jpg',
         ];
     }
 
@@ -65,6 +68,7 @@ class UsersTableSeeder extends Seeder
     		'tab_label' => 'Intro',
     		'header' => 'Intro',
     		'content' => "<p>I am a teacher. It's how I define myself. A good teacher isn't someone who gives the answers out to their kids but is understanding of needs and challenges and gives tools to help other people succeed. That's the way I see myself, so whatever it is that I will do eventually after politics, it'll have to do a lot with teaching. - Justin Trudeau</p>",
+            'image_url' => '/images/jenny/intro.jpg',
     	];
     }
 
@@ -73,6 +77,7 @@ class UsersTableSeeder extends Seeder
     		'tab_label' => 'Work',
     		'header' => 'Work',
     		'content' => "<p>Teaching is a very noble profession that shapes the character, caliber, and future of an individual. If the people remember me as a good teacher, that will be the biggest honour for me. - A. P. J. Abdul Kalam</p>",
+            'image_url' => '/images/jenny/work.jpg',
     	];
     }
 
@@ -81,6 +86,7 @@ class UsersTableSeeder extends Seeder
     		'tab_label' => 'About',
     		'header' => 'About',
     		'content' => '<p>I have learned that, although I am a good teacher, I am a much better student, and I was blessed to learn valuable lessons from my students on a daily basis. They taught me the importance of teaching to a student - and not to a test. - Erin Gruwell</p>',
+            'image_url' => '/images/jenny/about.jpg',
     	];
     }
 
@@ -103,6 +109,8 @@ class UsersTableSeeder extends Seeder
         return [
             'og_title' => 'Portfolio | Jenny Sia',
             'og_description' => "I am a teacher. It's how I define myself. A good teacher isn't someone who gives the answers out to their kids but is understanding of needs and challenges and gives tools to help other people succeed. That's the way I see myself, so whatever it is that I will do eventually after politics, it'll have to do a lot with teaching. - Justin Trudeau",
+            'favicon_url' => '/images/logo.png',
+            'og_image_url' => '/images/og_image.png',
         ];
     }
 }

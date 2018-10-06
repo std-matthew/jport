@@ -20,9 +20,13 @@ class SettingController extends Controller
     public function show()
     {
         $settings = Setting::getContent();
+        $colors = Setting::getColors();
+        $depths = Setting::getDepths();
         
         return view('backend.settings.show', [ 
             'settings' => $settings,
+            'colors' => $colors,
+            'depths' => $depths,
         ]);
     }
 

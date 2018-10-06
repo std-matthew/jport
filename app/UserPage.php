@@ -42,6 +42,10 @@ class UserPage extends Model
             $image = url('/') . '/storage/' . $this->$column;
         }
 
+        if ($this->image_url) {
+            $image = $this->image_url;
+        }
+
         return $image;
     }
 }

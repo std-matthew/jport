@@ -1101,6 +1101,7 @@ input, select, textarea {
 		-webkit-background-size: cover;
 		     -o-background-size: cover;
 		        background-size: cover;
+		background-position: center;
 	}
 
 		#bg:before, #bg:after {

@@ -19,15 +19,18 @@ class CreateSettingsTable extends Migration
             $table->integer('user_id')->unsigned()->index();
 
             $table->string('favicon')->nullable();
+            $table->string('favicon_url')->nullable();
 
             $table->string('og_image')->nullable();
+            $table->string('og_image_url')->nullable();
+
             $table->string('og_title')->nullable();
             $table->text('og_description')->nullable();
 
             $table->integer('theme')->unsigned()->default(0);
 
-            $table->integer('color')->unsigned()->default(0);
-            $table->integer('color_depth')->unsigned()->default(0);
+            $table->string('color')->nullable();
+            $table->string('color_depth')->nullable();
 
             $table->timestamps();
         });

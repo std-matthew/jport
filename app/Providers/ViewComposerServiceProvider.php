@@ -22,13 +22,22 @@ class ViewComposerServiceProvider extends ServiceProvider
             View::share('today', Carbon::now());
             View::share('helpers', new Helpers);
 
+            $color = '';
+
             /* Add in the needed vars if logged in */
             if(\Auth::check()) {
 
                 $user = \Auth::user();
 
+                $settings = $user->settings;
+                if ($settings) {
+                    $color = $settings->renderColor();
+                }
+
                 View::share('self', $user);
             }
+
+            View::share('colorTheme', $color);
         });
     }
 

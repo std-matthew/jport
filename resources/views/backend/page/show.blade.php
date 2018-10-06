@@ -32,6 +32,13 @@
 						<label for="content">Content</label>
 					</div>
 				@endif
+
+				@if (!in_array('image_url', $excepts))
+					<div class="input-field col s12">
+						<input value="{{ $page->image_url }}" name="image_url" id="image_url" type="text" class="validate">
+						<label for="image_url">Image URL</label>
+					</div>
+				@endif
 				
 				@if (!in_array('image_path', $excepts))
 					@if ($page->image_path)

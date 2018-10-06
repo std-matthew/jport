@@ -10,5 +10,5 @@ class UserContactController extends UserPageController
     protected $model = UserContact::class;
     protected $label = 'contact details';
     protected $updateurl = 'contact.update';
-    protected $excepts = ['content', 'image_path'];
+    protected $excepts = ['content',  'image_url', 'image_path'];
 }

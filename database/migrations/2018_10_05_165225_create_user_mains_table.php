@@ -22,6 +22,7 @@ class CreateUserMainsTable extends Migration
             $table->string('header')->nullable();
             $table->text('content')->nullable();
             
+            $table->string('image_url')->nullable();
             $table->string('image_path')->nullable();
             
             $table->timestamps();
