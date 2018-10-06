@@ -6,6 +6,10 @@
 	        @endforeach
 	    </ul>
 	</div>
+
+	<script type="text/javascript">
+		window.location.href = '{{ url('/') }}#contact';
+	</script>
 @endif
 
 
@@ -26,4 +30,8 @@
 	mb-3 text-white">
 		<p class="m-0">{{ session('status_message.message') }}</p>
 	</div>
+
+	<script type="text/javascript">
+		window.location.href = '{{ url('/') }}#contact';
+	</script>
 @endif

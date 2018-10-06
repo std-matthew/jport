@@ -6,6 +6,15 @@
 				@guest
 					<li><a href="{{ route('login') }}">Login</a></li>
 					<li><a href="{{ route('register') }}">Register</a></li>
+				@else
+					<li>
+						<a href="{{ route('user.notifications.index') }}">
+							Notifications
+							@if ($self->unreadNotifications()->count())
+								<span class="new badge">{{ $self->unreadNotifications()->count() }}</span>
+							@endif
+						</a>
+					</li>
 				@endguest
 			</ul>
 		</div>
