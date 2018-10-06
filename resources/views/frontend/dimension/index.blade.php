@@ -62,7 +62,7 @@
 		@if ($socials)
 		<ul class="icons">
 			@foreach ($socials as $social)
-				<li><a href="{{ $social->url }}" class="icon {{ $social->renderIcon() }}"><span class="label">{{ $social->renderLabel() }}</span></a></li>
+				<li><a href="{{ $social->url }}" target="_blank" class="icon {{ $social->renderIcon() }}"><span class="label">{{ $social->renderLabel() }}</span></a></li>
 			@endforeach
 		</ul>
 		@endif
