@@ -33,28 +33,14 @@ class UsersTableSeeder extends Seeder
 	        	$user = User::create($vars);
         	}
 
-            if (!$user->main) {
-                $user->main()->create($this->getMain());
-            }
+            $array = ['main', 'intro', 'work', 'about', 'contact', 'settings'];
 
-        	if (!$user->intro) {
-	        	$user->intro()->create($this->getIntro());
-        	}
-
-        	if (!$user->work) {
-	        	$user->work()->create($this->getWork());
-        	}
-
-        	if (!$user->about) {
-	        	$user->about()->create($this->getAbout());
-        	}
-
-            if (!$user->contact) {
-                $user->contact()->create($this->getContact());
-            }
-
-            if (!$user->settings) {
-                $user->settings()->create();
+            foreach ($array as $value) {
+            /* Short circuit if any relationship is missing */
+                if (!$user->$value) {
+                    $function = 'get' . ucwords($value);
+                    $user->$value()->create($this->$function());
+                }
             }
 
             if (!count($user->socials)) {
@@ -70,7 +56,7 @@ class UsersTableSeeder extends Seeder
     private function getMain() {
         return [
             'header' => 'Jenny Sia',
-            'content' => '<p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br /> for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>',
+            'content' => '<p>Amazing. Beautiful. Simplicity.</p>',
         ];
     }
 
@@ -78,7 +64,7 @@ class UsersTableSeeder extends Seeder
     	return [
     		'tab_label' => 'Intro',
     		'header' => 'Intro',
-    		'content' => '<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>',
+    		'content' => "<p>I am a teacher. It's how I define myself. A good teacher isn't someone who gives the answers out to their kids but is understanding of needs and challenges and gives tools to help other people succeed. That's the way I see myself, so whatever it is that I will do eventually after politics, it'll have to do a lot with teaching. - Justin Trudeau</p>",
     	];
     }
 
@@ -86,7 +72,7 @@ class UsersTableSeeder extends Seeder
     	return [
     		'tab_label' => 'Work',
     		'header' => 'Work',
-    		'content' => '<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p> <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>',
+    		'content' => "<p>Teaching is a very noble profession that shapes the character, caliber, and future of an individual. If the people remember me as a good teacher, that will be the biggest honour for me. - A. P. J. Abdul Kalam</p>",
     	];
     }
 
@@ -94,7 +80,7 @@ class UsersTableSeeder extends Seeder
     	return [
     		'tab_label' => 'About',
     		'header' => 'About',
-    		'content' => '<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>',
+    		'content' => '<p>I have learned that, although I am a good teacher, I am a much better student, and I was blessed to learn valuable lessons from my students on a daily basis. They taught me the importance of teaching to a student - and not to a test. - Erin Gruwell</p>',
     	];
     }
 
@@ -102,15 +88,21 @@ class UsersTableSeeder extends Seeder
         return [
             'tab_label' => 'Contact',
             'header' => 'Contact',
-            'content' => '<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>',
         ];
     }
 
     private function getSocials() {
     	return [
-    		['url' => 'https://facebook.com', 'type' => UserSocial::FACEBOOK],
+    		['url' => 'https://web.facebook.com/jenny.sia.399', 'type' => UserSocial::FACEBOOK],
     		['url' => 'https://twitter.com', 'type' => UserSocial::TWITTER],
-    		['url' => 'https://instagram.com', 'type' => UserSocial::INSTAGRAM],
+    		['url' => 'https://www.instagram.com/jensiadel', 'type' => UserSocial::INSTAGRAM],
     	];
+    }
+
+    private function getSettings() {
+        return [
+            'og_title' => 'Portfolio | Jenny Sia',
+            'og_description' => "I am a teacher. It's how I define myself. A good teacher isn't someone who gives the answers out to their kids but is understanding of needs and challenges and gives tools to help other people succeed. That's the way I see myself, so whatever it is that I will do eventually after politics, it'll have to do a lot with teaching. - Justin Trudeau",
+        ];
     }
 }
