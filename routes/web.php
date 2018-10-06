@@ -21,6 +21,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('user', 'UserController@update')->name('user.update');
 	
 	Route::get('user/notifications', 'UserController@showNotifications')->name('user.notifications.index');
+	Route::post('user/notifications', 'UserController@readNotifications')->name('user.notifications.read');
+
 	Route::get('user/password', 'UserController@showPassword')->name('user.password.show');
 	Route::post('user/password', 'UserController@updatePassword')->name('user.password.update');
 

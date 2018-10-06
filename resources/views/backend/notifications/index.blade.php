@@ -3,19 +3,28 @@
 @section('content')
 <main class="container">
 	<div class="row">
+		<form action="{{ route('user.notifications.read') }}" method="POST">
+			@csrf
+			<button type="submit" class="waves-effect waves-light btn right">Mark as Read</button>
+		</form>
+	</div>
+	<div class="row">
 		<div class="col s12">
 			@if ($self->notifications()->count())
-			<ul class="collection">
 				@foreach ($self->notifications as $notification)
-					<li class="collection-item avatar">
-						<span class="title">Message: {{ $notification->data['message'] }}</span>
-						<p>From: <strong>{{ $notification->data['name'] }}</strong> ({{ $notification->data['email'] }})</p>
-						<small>Date Received: {{ $notification->created_at }}</small>
-					</li>
+				<div class="card-panel">
+					@if (!$notification->read_at)
+						<span class="new badge right"></span>
+					@endif
+					<span class="card-title"><strong>{{ $notification->data['name'] }}</strong> ({{ $notification->data['email'] }})</span>
+					<div class="card-content">
+			          <p>{{ $notification->data['message'] }}</p>
+			        </div>
+					<small class="right">{{ $notification->created_at }}</small>
+				</div>
 				@endforeach
-			</ul>
 			@else
-				<p>No notifications found.</p>
+				<h6 class="center-align">No notifications found.</h6>
 			@endif
 		</div>
 	</div>

@@ -18,6 +18,8 @@ class CreateSettingsTable extends Migration
             
             $table->integer('user_id')->unsigned()->index();
 
+            $table->string('icon')->nullable();
+            
             $table->string('favicon')->nullable();
             $table->string('favicon_url')->nullable();
 

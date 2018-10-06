@@ -13,14 +13,14 @@
 
 			<div class="row">
 				@if (!in_array('tab_label', $excepts))
-					<div class="input-field col {{ in_array('header', $excepts) ? 's12' : 's6' }}">
+					<div class="input-field col {{ in_array('header', $excepts) ? 's12' : 'm6 s12' }}">
 						<input value="{{ $page->tab_label }}" name="tab_label" id="tab_label" type="text" class="validate">
 						<label for="tab_label">Tab Label</label>
 					</div>
 				@endif
 
 				@if (!in_array('header', $excepts))
-					<div class="input-field col {{ in_array('tab_label', $excepts) ? 's12' : 's6' }}">
+					<div class="input-field col {{ in_array('tab_label', $excepts) ? 's12' : 'm6 s12' }}">
 						<input value="{{ $page->header }}" name="header" id="header" type="text" class="validate">
 						<label for="header">Header</label>
 					</div>

@@ -107,6 +107,7 @@ class UsersTableSeeder extends Seeder
 
     private function getSettings() {
         return [
+            'icon' => 'fa-heart',
             'og_title' => 'Portfolio | Jenny Sia',
             'og_description' => "I am a teacher. It's how I define myself. A good teacher isn't someone who gives the answers out to their kids but is understanding of needs and challenges and gives tools to help other people succeed. That's the way I see myself, so whatever it is that I will do eventually after politics, it'll have to do a lot with teaching. - Justin Trudeau",
             'favicon_url' => '/images/logo.png',

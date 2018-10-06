@@ -66,8 +66,13 @@ class UserController extends Controller
 
     public function showNotifications()
     {
+        return view('backend.notifications.index');
+    }
+
+    public function readNotifications()
+    {
         \Auth::user()->unreadNotifications->markAsRead();
 
-        return view('backend.notifications.index');
+        return redirect()->back();
     }
 }
