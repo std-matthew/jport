@@ -8,7 +8,7 @@
 	</div>
 
 	<script type="text/javascript">
-		window.location.href = '{{ url('/') }}#contact';
+		window.location.href = '{{ url()->current() }}#contact';
 	</script>
 @endif
 
@@ -32,6 +32,6 @@
 	</div>
 
 	<script type="text/javascript">
-		window.location.href = '{{ url('/') }}#contact';
+		window.location.href = '{{ url()->current() }}#contact';
 	</script>
 @endif
