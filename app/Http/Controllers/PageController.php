@@ -12,11 +12,16 @@ use App\User;
 
 class PageController extends Controller
 {
-    public function index(Request $request)
+    public function index(Request $request, $username = null)
     {
     	$user = null;
-    	if ($request->has('username')) { $user = User::where('username', $request->input('username'))->first(); }
-    	if (!$user) { $user = User::first(); }
+
+    	if ($username) { 
+            $user = User::where('username', $username)->first(); 
+        }
+
+    	if (!$user) { $user = User::orderBy('created_at', 'asc')->first(); }
+        
         $user = $user;
         $data = [];
         $array = ['main', 'intro', 'work', 'about', 'contact', 'socials', 'settings'];

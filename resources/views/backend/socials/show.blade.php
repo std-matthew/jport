@@ -30,23 +30,21 @@
 		@if ($socials)
 			<div class="row">
 				<div class="col s12">
-					<ul class="collection">
-						@foreach ($socials as $social)
-							<li class="collection-item">
-								<div>
-									<strong>{{ $social->renderLabel() }}</strong>
-									<small>({{ $social->url }})</small>
-									<a href="#!" class="secondary-content" onclick="event.preventDefault();
-					                    document.getElementById('social{{ $social->id }}').submit();">
-					                    <i class="material-icons">close</i>
-					                </a>
-								</div>
-							</li>
+					@foreach ($socials as $social)
+						<div class="card-panel">
+							<a href="#!" class="right" onclick="event.preventDefault();
+			                    document.getElementById('social{{ $social->id }}').submit();">
+			                    <i class="material-icons">close</i>
+			                </a>
+							<span class="card-title"><strong>{{ $social->renderLabel() }}</strong></span>
+							<div class="card-content">
+					          <p>{{ $social->url }}</p>
+					        </div>
 							<form id="social{{ $social->id }}" action="{{ route('social.destroy', $social->id) }}" method="POST" style="display: none;">
 							    @csrf
 							</form>
-						@endforeach
-					</ul>
+						</div>
+					@endforeach
 				</div>
 			</div>
 		@endif

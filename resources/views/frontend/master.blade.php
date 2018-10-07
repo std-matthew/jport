@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JPort</title>
+	<title>{{ config('app.name') }}</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<meta name="csrf-token" content="{{ csrf_token() }}">
+	<link rel="apple-touch-icon" href="/images/logo.png">
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
 </head>
 <body>
 

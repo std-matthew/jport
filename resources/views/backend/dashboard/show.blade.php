@@ -34,7 +34,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col m12">
+				<div class="input-field col m12 s12">
 					<input value="{{ $self->avatar_url }}" name="avatar_url" id="avatar_url" type="text" class="validate">
 					<label for="avatar_url">Avatar URL</label>
 				</div>
@@ -54,7 +54,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col m12">
+				<div class="input-field col m12 s12">
 					<input value="{{ $self->background_url }}" name="background_url" id="background_url" type="text" class="validate">
 					<label for="background_url">Background URL</label>
 				</div>

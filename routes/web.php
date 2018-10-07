@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PageController@index');
+Route::get('/profile/{username}', 'PageController@index');
 Route::post('/notify/{user}', 'PageController@notify')->name('user.notify');
 
 Auth::routes();
